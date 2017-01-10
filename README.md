@@ -1,20 +1,20 @@
-[jsfmt](https://github.com/rdio/jsfmt) for Sublime Text 2/3
+[prettier](https://github.com/jlongster/prettier) for Sublime Text 2/3
 =================
 
 
-If you want your javascript automatically formatted to abide a particular style, 
-then jsfmt is for you.  No need to read warnings and fix things yourself. 
-Just keep it all auto. Boom boom [jsfmt](https://github.com/rdio/jsfmt) is pretty tight. 
-And yeah, if you want it in Sublime Text this is your homeboy.
+Prettier is an opinionated JavaScript formatter inspired by
+[refmt](https://facebook.github.io/reason/tools.html) with advanced
+support for language features from ES2017, JSX, and Flow. It removes
+all original styling and ensures that all outputted JavaScript
+conforms to a consistent style. (See this [blog post](http://jlongster.com/A-Prettier-Formatter))
 
-![](http://i.imgur.com/zkBvQ6X.gif)
 
 Enable `autoformat` then save the file and it gets formatted.
 
 ### Installation
 
-**Via package control**  
-Open your command palette -> Package Control: Install Package -> jsfmt
+<!-- **Via package control**   -->
+<!-- Open your command palette -> Package Control: Install Package -> jsprettier -->
 
 **Manual**
 ```bash
@@ -23,20 +23,20 @@ Open your command palette -> Package Control: Install Package -> jsfmt
 cd ~/Library/"Application Support/Sublime Text 2"/Packages
 
 # clone this repo
-git clone https://github.com/ionutvmi/sublime-jsfmt jsfmt
+git clone hhttps://github.com/jlangston/sublime-jsprettier jsprettier
+cd jsprettier
+npm install
 ```
 
 On windows open cmd and:
 ```
 cd %APPDATA%\"Sublime Text 3"\Packages
-git clone https://github.com/ionutvmi/sublime-jsfmt jsfmt
+git clone https://github.com/jlangston/sublime-jsprettier jsprettier
+cd jsprettier
+npm install
 ```
 
-### Plugins included
-- [esformatter-braces](https://github.com/pgilad/esformatter-braces)
-- [esformatter-semicolons](https://github.com/bulyshko/esformatter-semicolons)
-- [esformatter-dot-notation](https://github.com/pgilad/esformatter-dot-notation)
-- [esformatter-quotes](https://github.com/millermedeiros/esformatter-quotes)
+
 
 
 ### Settings
@@ -46,29 +46,22 @@ git clone https://github.com/ionutvmi/sublime-jsfmt jsfmt
     "autoformat": false,
 
     // array of extensions for autoformat
-    "extensions": ["js", "sublime-settings"],
+    "extensions": ["js", "jsx", "sublime-settings"],
 
-    // options for jsfmt
+    // options for prettier
     "options": {
-        "preset": "jquery",
-        "indent": {
-            "value": "    "
-        },
-        // plugins included
-        "plugins": [
-            // "esformatter-quotes",
-            // "esformatter-semicolons",
-            // "esformatter-braces",
-            // "esformatter-dot-notation"
-        ]
-    },
-    "options-JSON": {
-        "plugins": [
-            "esformatter-quotes"
-        ],
-        "quotes": {
-            "type": "double"
-        }
+      // Fit code within this line limit
+      "printWidth": 120,
+      // Number of spaces it should use per tab
+      "tabWidth": 2
+      // Use the flow parser instead of babylon
+      "useFlowParser": false,
+      // If true, will use single instead of double quotes
+      "singleQuote": true,
+      // Controls the printing of trailing commas wherever possible
+      "trailingComma": false,
+      // Controls the printing of spaces inside array and objects
+      "bracketSpacing": true
     },
     "alert-errors": true,
     // path to nodejs
@@ -82,13 +75,13 @@ git clone https://github.com/ionutvmi/sublime-jsfmt jsfmt
 ### Commands
 **Command palette:**  
 
-- JSFMT: Format the current file
-- JSFMT: Toggle autoformat
-- JSFMT: Settings - Default
-- JSFMT: Settings - User
+- JSPrettier: Format the current file
+- JSPrettier: Toggle autoformat
+- JSPrettier: Settings - Default
+- JSPrettier: Settings - User
 
 **Menu:**  
-Preferences -> Package Settings -> Sublime JSFMT
+Preferences -> Package Settings -> Sublime JSPrettier
 
 **Keyboard shortcut**  
 If you want to trigger the formatting on a keyboard shortcut you will need to:
@@ -96,35 +89,10 @@ If you want to trigger the formatting on a keyboard shortcut you will need to:
 - Insert the configuration to call the `format_javascript` command
 ```js
 { "keys": ["ctrl+q"], "command": "format_javascript" },
-```
-
-### Formatting rules
-
-You can set global rules via a `.jsfmtrc`. Be crazy and establish one for all your 
-projects in `~/.jsfmtrc`. (like in [dotfiles](https://github.com/paulirish/dotfiles/blob/master/.jsfmtrc))
-
-Otherwise you're probably pretty levelheaded and will probably provide one in your 
-project root. It'll be read and applied.
-
-Rules you can intuit from these [esformatter preset files](https://github.com/millermedeiros/esformatter/tree/master/lib/preset).
-
-There's a `.jsfmtrc-sample` in this repo. It's a good start. Rename it and toss it 
-somewhere. Try it out. 
-
-### Installing plugins
-If you want to use a plugin that is not installed by default you will need to follow the next steps:
-
-1. Go to the packages folder (Preferences -> Browse Packages)  
-2. cd into the jsfmt folder.  
-3. Install the plugins you need.  
-4. Go to your jsfmt settings file and add the name of the plugin in the plugins array.  
-
-#### Compatibility 
-
-Should work in both ST2 and ST3.
-
 
 ### Contributing
 
-If you find any bugs feel free to report them [here](https://github.com/ionutvmi/sublime-jsfmt/issues)  
+If you find any bugs feel free to report them [here](https://github.com/jlangston/sublime-jsprettier)  
 Pull requests are also encouraged.
+
+Big thanks to ionutvmi for [sublime-jsfmt](https://github.com/ionutvmi/sublime-jsfmt) which this plugin is based off of

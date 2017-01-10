@@ -5,7 +5,7 @@ import sublime
 
 IS_OSX = platform.system() == 'Darwin'
 IS_WINDOWS = platform.system() == 'Windows'
-SETTINGS_FILE = 'jsfmt.sublime-settings'
+SETTINGS_FILE = 'jsprettier.sublime-settings'
 
 
 def node_bridge(data, bin, cdir, args=[]):

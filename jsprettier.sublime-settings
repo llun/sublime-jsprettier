@@ -1,0 +1,26 @@
+{
+    // autoformat on save
+    "autoformat": false,
+
+    // array of extensions for autoformat
+    "extensions": ["js", "jsx", "sublime-settings"],
+
+    // options for prettier
+    "options": {
+      // Fit code within this line limit
+      "printWidth": 120,
+      // Number of spaces it should use per tab
+      "tabWidth": 2,
+      // Use the flow parser instead of babylon
+      "useFlowParser": false,
+      // If true, will use single instead of double quotes
+      "singleQuote": true,
+      // Controls the printing of trailing commas wherever possible
+      "trailingComma": false,
+      // Controls the printing of spaces inside array and objects
+      "bracketSpacing": true
+    },
+    "node-path": "node",
+    "alert-errors": true,
+    "ignore-selection": false
+}

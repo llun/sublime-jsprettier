@@ -12,17 +12,17 @@
                 "children":
                 [
                     {
-                        "caption": "Sublime JSFMT",
+                        "caption": "Sublime jsprettier",
                         "children":
                         [
                             {
                                 "command": "open_file",
-                                "args": {"file": "${packages}/jsfmt/jsfmt.sublime-settings"},
+                                "args": {"file": "${packages}/jsprettier/jsprettier.sublime-settings"},
                                 "caption": "Settings – Default"
                             },
                             {
                                 "command": "open_file",
-                                "args": {"file": "${packages}/User/jsfmt.sublime-settings"},
+                                "args": {"file": "${packages}/User/jsprettier.sublime-settings"},
                                 "caption": "Settings – User"
                             },
                             { "caption": "-" },
