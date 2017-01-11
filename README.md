@@ -89,6 +89,7 @@ If you want to trigger the formatting on a keyboard shortcut you will need to:
 - Insert the configuration to call the `format_javascript` command
 ```js
 { "keys": ["ctrl+q"], "command": "format_javascript" },
+```
 
 ### Contributing
 
