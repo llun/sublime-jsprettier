@@ -23,7 +23,7 @@ Enable `autoformat` then save the file and it gets formatted.
 cd ~/Library/"Application Support/Sublime Text 2"/Packages
 
 # clone this repo
-git clone hhttps://github.com/jlangston/sublime-jsprettier jsprettier
+git clone https://github.com/jlangston/sublime-jsprettier jsprettier
 cd jsprettier
 npm install
 ```
