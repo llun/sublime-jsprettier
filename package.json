@@ -3,7 +3,8 @@
   "dependencies": {
     "extend": "^3.0.0",
     "get-stdin": "^5.0.1",
-    "prettier": "^0.0.3"
+    "prettier": "^0.0.3",
+    "prettier-standard-formatter": "^0.111111111111111.111111111111111"
   },
   "private": true
 }
